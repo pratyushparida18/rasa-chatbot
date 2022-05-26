@@ -1,0 +1,68 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - pm_kusum_scheme
+  - Component_A
+  - Component_B
+
+actions:
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_scheme
+  - utter_a
+  - utter_b
+  - utter_q
+  - utter_more
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_scheme:
+  - text: "PM-KUSUM Scheme supports three different kind of installations, known as three components of the Scheme as given below:
+
+            Component-A: Setting up of decentralized ground/ stilt mounted grid connected solar or other renewable energy based power plants up to 2 MW capacity
+            Component-B: Installation of stand-alone solar agriculture pumps of capacity up to 7.5 HP
+            Component-C: Solarisation of existing grid connected agriculture pumps of capacity up to 7.5 HP"
+  
+  utter_a:
+  - text: "Under this component, solar or other renewable energy based power plants of capacity 500 kW to 2 MW can be installed on barren or uncultivable agriculture land mainly. Agriculture land is also permitted under this scheme provided that solar plants are installed in slit fashion (i.e. raised structure for installation of solar panels) and with adequate spacing between panel rows for ensuring that farming activity is not affected."
+
+  utter_b:
+  - text: "Under this Component, farmers can replace their existing diesel poweredagriculture pumps with standalone solar pumpsof capacity up to 7.5 HP in off-grid areas. Pumps of capacity higher than 7.5 HP may be allowed, however, the central subsidy will be limited to the subsidy applicable for pump of 7.5 HP."
+  
+  utter_more:
+  - text: "want to know more..... browse  https://pmkusum.mnre.gov.in/landing-faq.html"
+
+  utter_q:
+  - text: "what can I do for you"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
