@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasa Chatbot</title>
+</head>
+<body>
+    <h1>Rasa Chatbot</h1>
+    <div id="webchat">
+        <script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
+        <script>
+            WebChat.default.init({
+            
+                customData:{"languae":en},
+                socketUrl:"https://rasa-server-pratyushparida18.cloud.okteto.net",
+                title:rasabot,
+                subtitle:'say hi and get started'
+
+            })
+        </script>
+    </div>
+    
+</body>
+</html>

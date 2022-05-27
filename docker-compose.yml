@@ -1,36 +1,34 @@
 version: '3.4'
 services:
-
-
-
-  rasa-server:
+  rasa:
     image: rasa-bot:latest
-    working_dir: /app
     build: "./"
     restart: always
+    working_dir: "/app"
     volumes:
-    - ./actions:/app/actions
-    - ./data:/app/data
-    command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" --debug"
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./actions:/app/actions
+    command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\""
     ports:
-    - '5002:5005'
+      - '5005:5005'
     public: true
     networks:
-    - all
+      - all
 
-  rasa-actions-server:
-    image: rasa-bot:latest
-    working_dir: /app
+  rasa-actions:
     build: "./"
+    image: rasa-bot:latest
     restart: always
+    working_dir: "/app"
     volumes:
-    - ./actions:/app/actions
-    - ./utils:/app/utils
-    command: ["rasa", "run", "actions"]
+      - ./actions:/app/actions
+    command: ["rasa","run","actions"]
     ports:
     - '5055:5055'
+    public: true
     networks:
-    - all
+      - all
 
 networks:
   all:
